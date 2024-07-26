@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .anatomi_sticky-button-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: #fff;
+        }
+
+        .anatomi_sticky-button-content {
+            position: relative;
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .anatomi_sticky_button {
+            width: 100%;
+            background-color: #B61539;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 20px 15px;
+        }
+
+        .anatomi-sticky-button-opened {
+            position: absolute;
+            width: calc(100% - 15px);
+            background-color: #fff;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            bottom: 80px;
+            height: fit-content;
+            transition: all 1s ease-in-out;
+            display: none;
+        }
+
+        .anatomi-sticky-button-opened.anatomi-active-sticky {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .anatomi-sticky-button-opened .anatomi-sticky-button-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            align-self: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .anatomi-sticky-button-choices {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-self: center;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #BBBBBB;
+            border-radius: 10px;
+            width: fit-content;
+            gap: 15px;
+            width: 150px;
+            height: 130px;
+        }
+
+        .anatomi-sticky-button-choices img {
+            object-fit: contain;
+            width: 40px;
+            height: 30px;
+        }
+
+        .anatomi-sticky-button-choices p {
+            font-size: 14px;
+        }
+
+        .anatomi-sticky-button-choices button {
+            background-color: #BB2646;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 400;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        .anatomi-sticky-button-choices a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .anatomi-sticky-close-button {
+            position: absolute;
+            top: -10px;
+            right: 0px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .anatomi-sSaglik-all,.anatomi-diger-all {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            align-self: center;
+            height: 100%;
+            width: 90%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            transition: all 1s ease-in-out;
+            display: none;
+        }
+
+        .anatomi-sSaglik-active,.anatomi-diger-active {
+            display: grid;
+        }
+
+        
+
+        .anatomi-covid-choice,
+        .anatomi-egitim-choice,
+        .anatomi-vize-choice {
+            height: 150px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .anatomi-vize-choice {
+            transform: translateX(50%);
+        }
+
+        .anatomi-sSaglik-all-close,.anatomi-diger-all-close {
+            position: absolute;
+            top: -10px;
+            right: -20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="anatomi_sticky-button-container">
+        <div class="anatomi_sticky-button-content">
+            <button class="anatomi_sticky_button">
+                <a class="anatomi_sticky_button_open">Ücretsiz Teklif Al</a>
+            </button>
+
+            <div class="anatomi-sticky-button-opened anatomi-active-sticky">
+                <div class="anatomi-sticky-close-button">
+                    <img src="https://resmim.net/cdn/2024/01/25/ZOn5oF.webp" alt="">
+                </div>
+                <div class="anatomi-sticky-button-content">
+                    <div class="anatomi-sticky-button-choices anatomi-kasko-choice">
+                        <img src="https://resmim.net/cdn/2024/01/25/ZOPUMG.webp" alt="">
+                        <p>Kasko</p>
+                        <button>
+                            <a class="anatomi-sticky-button-choice-link choice-kasko-link" href="/full-kasko">Teklif
+                                Al</a>
+                        </button>
+                    </div>
+
+                    <div class="anatomi-sticky-button-choices anatomi-trafik-choice">
+                        <img src="https://resmim.net/cdn/2024/01/25/ZOPUMG.webp" alt="">
+                        <p>Trafik</p>
+                        <button>
+                            <a class="anatomi-sticky-button-choice-link choice-trafik-link"
+                                href="/trafik-sigortasi">Teklif Al</a>
+                        </button>
+                    </div>
+
+                    <div class="anatomi-sticky-button-choices anatomi-tSaglik-choice">
+                        <img src="https://resmim.net/cdn/2024/01/25/ZOnoH8.webp" alt="">
+                        <p>Tamamlayıcı Sağlık</p>
+                        <button>
+                            <a class="anatomi-sticky-button-choice-link choice-tSaglik-link"
+                                href="/tamamlayici-saglik-sigortasi">Teklif Al</a>
+                        </button>
+                    </div>
+
+                    <div class="anatomi-sticky-button-choices anatomi-dask-choice">
+                        <img src="https://resmim.net/cdn/2024/01/25/ZOnbU6.webp" alt="">
+                        <p>Dask</p>
+                        <button>
+                            <a class="anatomi-sticky-button-choice-link choice-dask-link"
+                                href="/zorunlu-deprem-sigortasi-dask">Teklif Al</a>
+                        </button>
+                    </div>
+
+                    <div class="anatomi-sticky-button-choices anatomi-sSaglik-choice">
+                        <img src="https://resmim.net/cdn/2024/01/25/ZOnrR2.webp" alt="">
+                        <p>Seyahat Sağlık</p>
+                        <button class="open-seyahat-choice">
+                            <a class="anatomi-sticky-button-choice-link choice-sSaglik-link">Teklif Al</a>
+                        </button>
+
+                        <div class="anatomi-sSaglik-all">
+                            <button class="anatomi-sSaglik-all-close">
+                                Geri
+                            </button>
+                            <div class="anatomi-sticky-button-choices anatomi-covid-choice">
+                                <img src="https://resmim.net/cdn/2024/01/25/ZOnrR2.webp" alt="">
+                                <p> COVID-19 Yurt Dışı Seyahat</p>
+                                <button>
+                                    <a class="anatomi-sticky-button-choice-link choice-covid-link"
+                                        href="/covid-19-koronavirus-yurt-disi-seyahat-sigortasi">Teklif Al</a>
+                                </button>
+                            </div>
+
+                            <div class="anatomi-sticky-button-choices anatomi-egitim-choice">
+                                <img src="https://resmim.net/cdn/2024/01/25/ZOnrR2.webp" alt="">
+                                <p>Yurt Dışı Eğitim Seyahat</p>
+                                <button>
+                                    <a class="anatomi-sticky-button-choice-link choice-egitim-link"
+                                        href="/yurt-disi-egitim-seyahat-sigortasi">Teklif Al</a>
+                                </button>
+                            </div>
+
+                            <div class="anatomi-sticky-button-choices anatomi-vize-choice">
+                                <img src="https://resmim.net/cdn/2024/01/25/ZOnrR2.webp" alt="">
+                                <p>Yurt Dışı Vize Seyahat</p>
+                                <button>
+                                    <a class="anatomi-sticky-button-choice-link choice-vize-link"
+                                        href="/yurt-disi-vize-seyahat-sigortasi">Teklif Al</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="anatomi-sticky-button-choices anatomi-diger-choice">
+                        <img src="https://resmim.net/cdn/2024/01/25/ZOny9x.webp" alt="">
+                        <p>Diğer Ürünler</p>
+                        <button>
+                            <a class="anatomi-sticky-button-choice-link choice-diger-link">Teklif Al</a>
+                        </button>
+
+                        <div class="anatomi-diger-all">
+                            <button class="anatomi-diger-all-close">
+                                Geri
+                            </button>
+                            <div class="anatomi-sticky-button-choices anatomi-covid-choice">
+                                <img src="https://resmim.net/cdn/2024/01/25/ZOny9x.webp" alt="">
+                                <p>Dijital Güvenlik</p>
+                                <button>
+                                    <a class="anatomi-sticky-button-choice-link choice-covid-link"
+                                    href="/dijital-guvenlik-sigortasi">Teklif Al</a>
+                                </button>
+                            </div>
+
+                            <div class="anatomi-sticky-button-choices anatomi-egitim-choice">
+                                <img src="https://resmim.net/cdn/2024/01/25/ZOny9x.webp" alt="">
+                                <p>İklim</p>
+                                <button>
+                                    <a class="anatomi-sticky-button-choice-link choice-egitim-link"
+                                    href="/iklim-sigortasi">Teklif Al</a>
+                                </button>
+                            </div>
+
+                            <div class="anatomi-sticky-button-choices anatomi-vize-choice">
+                                <img src="https://resmim.net/cdn/2024/01/25/ZOny9x.webp" alt="">
+                                <p>Mini Kasko</p>
+                                <button>
+                                    <a class="anatomi-sticky-button-choice-link choice-vize-link"
+                                        href=href="/mini-kasko">Teklif Al</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+    const  anatomiActive = document.querySelector('.anatomi-active-sticky');
+    const stickyButton = document.querySelector('.anatomi_sticky_button');
+    const stickyButtonOpened = document.querySelector('.anatomi-sticky-button-opened');
+    const stickyButtonClose = document.querySelector('.anatomi-sticky-close-button');
+    const sSaglikButton = document.querySelector('.open-seyahat-choice');
+    const sSaglikAll = document.querySelector('.anatomi-sSaglik-all');
+    const sSaglikAllClose = document.querySelector('.anatomi-sSaglik-all-close');
+    const digerButton = document.querySelector('.choice-diger-link');
+    const digerAll = document.querySelector('.anatomi-diger-all');
+    const digerAllClose = document.querySelector('.anatomi-diger-all-close');
+
+
+
+    stickyButton.addEventListener('click', () => {
+        stickyButtonOpened.classList.add('anatomi-active-sticky');
+    })
+
+    stickyButtonClose.addEventListener('click', () => {
+        stickyButtonOpened.classList.remove('anatomi-active-sticky');
+    })
+
+    sSaglikButton.addEventListener('click', () => {
+        sSaglikAll.classList.add('anatomi-sSaglik-active');
+    })
+
+    sSaglikAllClose.addEventListener('click', () => {
+        sSaglikAll.classList.remove('anatomi-sSaglik-active');
+    })
+
+    digerButton.addEventListener('click', () => {
+        digerAll.classList.add('anatomi-diger-active');
+    })
+
+    digerAllClose.addEventListener('click', () => {
+        digerAll.classList.remove('anatomi-diger-active');
+    })
+
+
+
+</script>
+
+</html>

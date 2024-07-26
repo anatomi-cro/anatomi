@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .progressBar {
+            position: relative;
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 10px;
+            border: 2px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .line {
+            position: absolute;
+            width: 90%;
+            height: 2px;
+            background-color: #ddd;
+        }
+
+        .line::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: cornflowerblue;
+            transition: width .3s ease-in-out;
+        }
+
+        .circle-active {
+            border: 2px solid cornflowerblue;
+            background-color: cornflowerblue;
+            overflow: hidden;
+        }
+
+        .circle img {
+            display: none;
+        }
+
+        .circle-active img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: cornflowerblue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progressBar">
+        <div class="circle circle1 circle-active">1
+            <img src="https://resmim.net/cdn/2024/01/24/ZOjNR2.png" alt="">
+        </div>
+        <div class="circle circle2">2<img src="https://resmim.net/cdn/2024/01/24/ZOjNR2.png" alt=""></div>
+        <div class="circle circle3">3<img src="https://resmim.net/cdn/2024/01/24/ZOjNR2.png" alt=""></div>
+        <div class="circle circle4">4<img src="https://resmim.net/cdn/2024/01/24/ZOjNR2.png" alt=""></div>
+        <div class="circle circle5">5<img src="https://resmim.net/cdn/2024/01/24/ZOjNR2.png" alt=""></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="trafik-buttons">
+        <button class="next">next</button>
+        <button class="prev"> <img src="https://resmim.net/cdn/2024/01/24/ZOd2o2.png" alt=""></button>
+    </div>
+</body>
+
+<script>
+    const circles = document.querySelectorAll(".circle");
+    const line = document.querySelector(".line");
+    const next = document.querySelector(".next");
+    const prev = document.querySelector(".prev");
+    const head = document.querySelector("head");
+
+    let activeCircle = 1;
+    prev.disabled = true;
+
+    next.addEventListener("click", () => {
+        activeCircle++;
+
+        circles.forEach((circle, idx) => {
+            if (activeCircle >= circles.length) {
+                activeCircle = circles.length;
+                next.disabled = true;
+            } else {
+                prev.disabled = false;
+            }
+            if (idx < activeCircle) {
+                circle.classList.add("circle-active");
+                const line_stlye = `
+                <style>
+                    .line::after{
+                        width: ${idx * 25}%;
+                    }
+                </style>
+                `
+                head.insertAdjacentHTML("beforeend", line_stlye);
+            } else {
+                circle.classList.remove("circle-active");
+            }
+        });
+
+    });
+
+    prev.addEventListener("click", () => {
+        activeCircle--;
+
+        circles.forEach((circle, idx) => {
+            if (activeCircle <= 1) {
+                activeCircle = 1;
+                prev.disabled = true;
+            } else {
+                next.disabled = false;
+            }
+            if (idx < activeCircle) {
+                circle.classList.add("circle-active");
+                const line_stlye = `
+                <style>
+                    .line::after{
+                        width: ${idx * 25}%;
+                    }
+                </style>
+                `
+                head.insertAdjacentHTML("beforeend", line_stlye);
+            } else {
+                circle.classList.remove("circle-active");
+            }
+        });
+    });
+
+</script>
+
+</html>
