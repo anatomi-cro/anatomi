@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .anatomi_category_woman_title,
+      .anatomi_category_man_title {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .anatomi_category_woman_title img,
+      .anatomi_category_man_title img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .anatomi_category_container {
+        width: 100%;
+        height: fit-content;
+      }
+
+      .anatomi_category_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .anatomi_category_titles {
+        display: flex;
+        gap: 20px;
+      }
+
+      .anatomi_category_titles a {
+        font-size: 25px;
+        color: #000;
+        text-decoration: none;
+      }
+
+      .anatomi_category_woman.anatomi_category_title_active {
+        color: blue;
+      }
+
+      .anatomi_category_man.anatomi_category_title_active {
+        color: blue;
+      }
+
+      .anatomi_category_body {
+        padding: 10px;
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      .anatomi_category_body_woman {
+        position: absolute;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw;
+        gap: 20px;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        overflow: auto;
+        padding-left: 10px;
+      }
+
+      .anatomi_category_body_woman_list,
+      .anatomi_category_body_man_list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .anatomi_category_body_man {
+        position: absolute;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw;
+        gap: 20px;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        overflow: auto;
+        padding-left: 10px;
+      }
+
+      .anatomi_category_body_man::-webkit-scrollbar,
+      .anatomi_category_body_woman::-webkit-scrollbar {
+        display: none;
+      }
+
+      .anatomi_category_body_woman.anatomi_category_body_active {
+        transform: translateX(0%);
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .anatomi_category_body_man.anatomi_category_body_active {
+        transform: translateX(0%);
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .anatomi_category_body_woman_item,
+      .anatomi_category_body_man_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100px;
+        height: 100%;
+        gap: 10px;
+        padding: 10px;
+        text-decoration: none;
+        border: none;
+      }
+
+      .item-active {
+        border: 1px solid #1d49f1;
+        color: #1d49f1 !important;
+      }
+
+      .anatomi_category_body_woman_item,
+      .anatomi_category_body_man_item h4 {
+        font-size: 14px;
+        color: #000;
+      }
+
+      .anatomi_category_body_woman_item img,
+      .anatomi_category_body_man_item img {
+        width: 60px;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="anatomi_category_container">
+      <div class="anatomi_category_content">
+        <div class="anatomi_category_titles">
+          <div class="anatomi_category_woman_title">
+            <img
+              src="https://anatomi.s3.eu-north-1.amazonaws.com/Rectangle+3.png"
+              alt=""
+            />
+            <a href="" class="anatomi_category_title anatomi_category_woman"
+              >Kadın</a
+            >
+          </div>
+          <div class="anatomi_category_woman_title">
+            <img
+              src="https://anatomi.s3.eu-north-1.amazonaws.com/Rectangle+3.png"
+              alt=""
+            />
+            <a href="" class="anatomi_category_title anatomi_category_man"
+              >Erkek</a
+            >
+          </div>
+        </div>
+
+        <div class="anatomi_category_body">
+          <div class="anatomi_category_body_woman">
+            <div class="anatomi_category_body_woman_list">
+              <a
+                href="/kadin-elbise-ve-etek"
+                class="anatomi_category_body_woman_item"
+              >
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Kad%C4%B1n+Elbise.jpg"
+                  alt=""
+                />
+                <h4>Elbise</h4>
+              </a>
+
+              <a href="/kadin-jean" class="anatomi_category_body_woman_item">
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Kad%C4%B1n+Jean.jpg"
+                  alt=""
+                />
+                <h4>Jean</h4>
+              </a>
+
+              <a
+                href="/kadin-sweatshirt"
+                class="anatomi_category_body_woman_item"
+              >
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Kad%C4%B1n+Sweatshirt.jpg"
+                  alt=""
+                />
+                <h4>Sweatshirt</h4>
+              </a>
+
+              <a
+                href="/kadin-pantolon"
+                class="anatomi_category_body_woman_item"
+              >
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Kad%C4%B1n+Sweatpant.jpg"
+                  alt=""
+                />
+                <h4>Sweatpant</h4>
+              </a>
+
+              <a
+                href="/kadin-tisort-ve-bluz"
+                class="anatomi_category_body_woman_item"
+              >
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Kad%C4%B1n+Ti%C5%9F%C3%B6rt.jpg"
+                  alt=""
+                />
+                <h4>T-shirt</h4>
+              </a>
+            </div>
+          </div>
+          <div class="anatomi_category_body_man">
+            <div class="anatomi_category_body_man_list">
+              <a href="/erkek-aksesuar" class="anatomi_category_body_man_item">
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Erkek+Aksesuar.jpg"
+                  alt=""
+                />
+                <h4>Aksesuar</h4>
+              </a>
+
+              <a href="/erkek-gomlek" class="anatomi_category_body_man_item">
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Erkek+G%C3%B6mlek.jpg"
+                  alt=""
+                />
+                <h4>Gömlek</h4>
+              </a>
+
+              <a href="/erkek-pantolon" class="anatomi_category_body_man_item">
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Erkek+Jean.jpg"
+                  alt=""
+                />
+                <h4>Jean</h4>
+              </a>
+
+              <a href="/erkek-tisort" class="anatomi_category_body_man_item">
+                <img
+                  src="https://anatomi.s3.eu-north-1.amazonaws.com/Erkek+Ti%C5%9F%C3%B6rt.jpg"
+                  alt=""
+                />
+                <h4>T-shirt</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const manItem = document.querySelectorAll(
+      ".anatomi_category_body_man_item"
+    );
+    const womanItem = document.querySelectorAll(
+      ".anatomi_category_body_woman_item"
+    );
+    const womanButton = document.querySelector(".anatomi_category_woman");
+    const manButton = document.querySelector(".anatomi_category_man");
+    const womanBody = document.querySelector(".anatomi_category_body_woman");
+    const manBody = document.querySelector(".anatomi_category_body_man");
+    const womanList = document.querySelector(
+      ".anatomi_category_body_woman_list"
+    );
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    womanButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      manButton.classList.remove("anatomi_category_title_active");
+      womanButton.classList.add("anatomi_category_title_active");
+      manBody.classList.remove("anatomi_category_body_active");
+      womanBody.classList.add("anatomi_category_body_active");
+    });
+
+    manButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      womanButton.classList.remove("anatomi_category_title_active");
+      manButton.classList.add("anatomi_category_title_active");
+      womanBody.classList.remove("anatomi_category_body_active");
+      manBody.classList.add("anatomi_category_body_active");
+    });
+
+    manItem.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        item.classList.add("item-active");
+      });
+    });
+
+    womanItem.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        item.classList.add("item-active");
+      });
+    });
+  </script>
+</html>

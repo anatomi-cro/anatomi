@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="story_container">
+        <ul></ul>
+    </div>
+</body>
+
+<script>
+    const liStory = document.createElement("li");
+    liStory.classList.add("has_story");
+
+    const story = document.createElement("div");
+    story.classList.add("story");
+
+    const a = document.createElement("a");
+    const img = document.createElement("img");
+    const picture = document.createElement("picture");
+
+    const source = document.createElement("source");
+    source.srcset = "img/story-1.jpg";
+    img.src = "img/story-1.jpg";
+    picture.appendChild(source);
+    a.appendChild(picture);
+    a.appendChild(img);
+
+    liStory.appendChild(story);
+    story.appendChild(a);
+
+    document.querySelector(".story_container ul").appendChild(liStory);
+
+</script>
+</html>
