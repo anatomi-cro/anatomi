@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-rows: 200px 200px 200px Grid satur yüksekliği, 3 satırdan olusmasını istiyorum*/
+    ;
+    /*grid-template-columns: 200px 200px 200px Grid sütun genişliği, 3 sütundan olusmasını istiyorum*/
+    ;
+    grid-gap: 10px;
+    /* grid-template: 200px 200px 200px / 200px 200px 200px; */
+    /* grid-template: 200px 200px 200px / 1fr 1fr 100px; genel widthi 3e böler gerisini dağıtır 1 hücrenin basına düşen alan fr */
+    grid-template: repeat(3, 100px) / 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    /* Gridin bizim bilmediğimiz rowları varsa*/
+    /* row-gap: 10px; */
+    /* column-gap: 10px; */
+}
+
+.item-1 {
+    background-color: #581B45;
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 1/4;
+}
+
+.item-2 {
+    background-color: #900C3F;
+}
+
+.item-3 {
+    background-color: #C70039;
+}
+
+.item-4 {
+    background-color: #FF5733;
+}
+
+.item-5 {
+    background-color: #FFC30F;
+    grid-column: 1/4;
+}
+
+.item-6 {
+    background-color: #691010;
+}
+
+.item-7 {
+    background-color: #137c6e;
+}
+
+.item-8 {
+    background-color: #e51eff;
+}
+
+.item-9 {
+    background-color: #ff1e1e;
+}

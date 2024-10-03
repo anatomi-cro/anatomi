@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .tabs{
+            max-width: 400px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .tabs_head{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #f1f1f1;
+        }
+        .tabs_toggle{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .tabs_toggle:hover{
+            background-color: #ddd;
+        }
+        .tabs_toggle.active{
+            background-color: #ccc;
+        }
+        .tabs_body{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .tabs_content{
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .tabs_content.active{
+            display: block;
+        }
+        p{
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="tabs">
+        <div class="tabs_head">
+            <span class="tabs_toggle active">Trafik Sigortası</span>
+            <span class="tabs_toggle">Kasko Sigortası</span>
+        </div>
+        <div class="tabs_body">
+            <div class="tabs_content active">
+                <form action="">zzz</form>
+            </div>
+            <div class="tabs_content">
+                <form action="">aaaa</form>
+            </div>
+        </div>
+    </div>
+    <script src="tablı_menu.js"></script>
+</body>
+</html>

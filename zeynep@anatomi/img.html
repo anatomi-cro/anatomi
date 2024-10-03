@@ -1,0 +1,394 @@
+
+$.getScript('/srv/service/conf/load/Days-Tarih-block_cart/1', function() { });
+
+function deleteCallback(result) {
+    $('#cartDetail').angularTemplate();
+    if (result.status > 0) {
+        $('.cart-soft-count').text(result.totalQuantity);
+        $('.cart-soft-price').text(result.totalPrice);
+    }
+}
+
+function buyut(str, mtr) {
+    if (mtr !== "")
+        str = str + "" + mtr;
+    var detay = window.open(str, 34, "toolbar=0,location=0,resizable=0,directories=0,status=0,menubar=0,scrollbars=0,width=480,height=306");
+}
+function SepetYazdir() {
+    var detay = window.open('Sepet.php?SepetYazdir=1', 'Sepet_Yazdir', "toolbar=0,location=0,screenX=200, screenY=200, directories=0,status=0,menubar=0,scrollbars=0,width=800,height=600");
+}
+function TeklifIste() {
+    var detay = window.open('Sepet.php?TeklifIste=1', 'Teklif_Iste', "toolbar=0,location=0,screenX=400, screenY=50, directories=0,status=0,menubar=0,scrollbars=0,width=600,height=800");
+}
+function createBasketLink() {
+
+    $.get('/srv/service/admin/getCartLinkForm', function (msg) {
+
+        var options = {
+            html: msg,
+            buttons: [
+                {
+                    text: LANG.get("save", "Kaydet"),
+                    class: 'btn-success fr btn-medium',
+                    click: function (win) {
+                        $.ajax({
+                            url: '/srv/service/admin/saveCartLink',
+                            type: 'POST',
+                            data: {
+                                link: $('#cartLinkInput').val(),
+                                notes: $('#cartLinkNote').val()
+                            },
+                            dataType: 'json',
+                            success: function (msg) {
+                                Message.debug(msg.statusText);
+                            },
+                            error: function (msg, p1, p2) {
+                                Message.debug('Bir hata oluştu.<br> Yönetim paneli oturumunuz düşmüş olabilir.');
+                            }
+                        });
+                        return false;
+                    }
+                },
+                {
+                    text: LANG.get("show_links_of_cart", "Sepet Linklerini Görüntüle"),
+                    class: 'fr btn-medium',
+                    click: function (win) {
+                        window.open('/Y/mod/Link/Link/index?redirect=srv/service/cart/create-cart-from-url', '_blank');
+                        return false;
+                    }
+                },
+            ]
+        };
+        var m = new Message(options);
+        m.show();
+        return false;
+    });
+
+}
+
+function GuzellikYap(coupon_code) {
+    $('#indirimkuponu').val(coupon_code);
+    $('#indirim').trigger('click');
+}
+
+function deleteAll() {
+    removeCoupon();
+    setTimeout(function () {
+        Cart.deleteAll();
+    }, 250);
+}
+
+function removeCoupon() {
+    $.ajax({
+        url: '/srv/service/cart/set-campaign-code/',
+        success: function (result) {
+            $('#cartDetail').angularTemplate();
+        }
+    });
+}
+
+function cartReady(data) {
+    var qty;
+    var qtyId;
+    var beforeVal;
+    if (navigator.appVersion.indexOf('Trident') > -1 && navigator.appVersion.indexOf('Edge') == -1) {
+        placeholder();
+    }
+
+    if (data.CAMPAIGN_PRODUCT_ID > 0) {
+        $.get('/srv/service/content/get/1054/acilir-alt-urun/' + data.CAMPAIGN_PRODUCT_ID, function (html) {
+            Message.showDialog(html, 500);
+        });
+    }
+
+    $('.qtyBtns').on('change', 'input', function () {
+        if ($(this).val() < 1) {
+            $(this).val(1);
+        }
+    });
+
+    $('.qtyBtns').on('focus', 'input', function () {
+        beforeVal = $(this).val();
+    });
+
+    $('.qtyBtns').on('blur', 'input', function () {
+        if ($(this).val() != beforeVal) {
+            var _this = this;
+            var cid = $(this).attr('data-cart-id');
+            var count = $(this).val();
+            Cart.update(cid, count, function (result) {
+                if (result.status > 0) {
+                    $('#cartDetail').angularTemplate();
+                    if (result.status > 0) {
+                        $('.cart-soft-count').text(result.totalQuantity);
+                        $('.cart-soft-price').text(result.totalPrice);
+                    }
+                } else {
+                    var ov = parseFloat(beforeVal) || 1;
+                    if(typeof result.stock != "undefined" && ov > result.stock){
+                        ov = result.stock;
+                    }
+                    $(_this).parent().find('input').val(ov);
+                    Message.showDialog(result.statusText, 500, 50);
+                }
+            });
+        }
+    });
+
+    SEPET_MIKTAR = 0;
+    var shopListIds = '';
+    $.each(data.PRODUCTS, function (i, p) {
+        SEPET_MIKTAR += p.COUNT;
+        shopListIds += p.ID + '-' + p.VARIANT_ID + ',';
+        if(p.SUBSCRIBE == 1) {
+            $.each(p.SUBSCRIBE_FREQUENCY_LIST, function (j, sfs) {
+                var select = $('.subscribe-frequency-select[data-id="' + p.CART_ID + '"]');
+                select.append('<option value="' + sfs + '"' + (sfs == p.SUBSCRIBE_FREQUENCY ? ' selected' : '') + '>' + LANG.get('subs_' + sfs) + '</option>');
+            });
+        }
+    });
+    if (shopListIds) {
+        $('.addToShopList').attr('data-url', '/srv/service/content/get/1014/popup/' + shopListIds);
+    }
+
+    if (typeof mobileApp !== 'undefined') {
+        try {
+            mobileApp.changedCartCount(SEPET_MIKTAR);
+        } catch (err) {
+
+        }
+    }
+    if (typeof webkit !== 'undefined') {
+        try {
+            webkit.messageHandlers.callbackHandler.postMessage(SEPET_MIKTAR);
+        } catch (err) {
+
+        }
+    }
+
+    $('#datepicker').datepicker({
+        firstDay: 1,
+        monthNames: [
+            LANG.get('January'),
+            LANG.get('February'),
+            LANG.get('March'),
+            LANG.get('April'),
+            LANG.get('May'),
+            LANG.get('June'),
+            LANG.get('July'),
+            LANG.get('August'),
+            LANG.get('September'),
+            LANG.get('October'),
+            LANG.get('November'),
+            LANG.get('December'),
+        ],
+        dayNamesMin: [
+            LANG.get('sun').substr(0, 3),
+            LANG.get('mon').substr(0, 3),
+            LANG.get('tue').substr(0, 3),
+            LANG.get('wed').substr(0, 3),
+            LANG.get('thu').substr(0, 3),
+            LANG.get('fri').substr(0, 3),
+            LANG.get('sat').substr(0, 3),
+        ],
+        dateFormat: "dd.mm.yy",
+        onSelect: function (str) {
+            $.get('/srv/service/cart/set-delivery-date/' + str, function(response){
+                        var result = {};
+                        try{
+                            result = JSON.parse(response);
+                        } catch(err){}
+                        if(result && result.status == 0){
+                            if(result.statusText){
+                                Message.debug(result.statusText);
+                            }
+                            $("#datepickerHour").val(result.time);
+                        }
+                    });
+        },
+        minDate: 0
+    });
+
+    $('#OnayKutusu').change(function (e) {
+        e.preventDefault();
+        var val = $(this).is(':checked') ? 1 : 0;
+        $.get('/srv/service/cart/set-approval-box/' + val);
+    });
+
+    $('#indirim').click(function (e) {
+        e.preventDefault();
+        var code = $('#indirimkuponu').val();
+
+        if (code.trim() != "") {
+            $.ajax({
+                url: '/srv/service/cart/set-campaign-code/' + encodeURIComponent(code),
+                dataType: 'json',
+                success: function (msg) {
+                    if (msg.status === 0) {
+                        Message.showDialog(msg.statusText, 500);
+                    }
+                    $('#cartDetail').angularTemplate();
+                }
+            });
+        } else {
+            Message.showDialog("İndirim kuponu boş olamaz", 500);
+        }
+    });
+
+    $('.buyBtn').click(function () {
+        var Toplam = parseInt('{{PRICE_GENERAL}}');
+        var Limit = parseInt('{{MIN_ORDER_PRICE}}');
+        if (Toplam < Limit) {
+            jAlert(Limit + ' tl üzerinde sipariş verebilirsiniz. Siparişiniz ' + Limit + ' TL altında ise ' + Limit + ' TL\'ye tamamlamanız gerekmektedir.');
+            return false;
+        }
+    });
+
+    $('#clearBasket').click(function () {
+        var pTitle = 'Dikkat';
+        var pContent = 'Sepetinizdeki ürünler silinecektir, onaylıyor musunuz?';
+        var pBtn = '<a class="btn btn-success btn-upper btn-radius" onclick="clearBasket();">Evet</a>';
+        easyPopup.panelPopup(pTitle, pContent, pBtn);
+    });
+
+    $('input[name^="HedPakDizi"]:checkbox').change(function (e) {
+        e.preventDefault();
+        var value = $(this).prop('checked') === true ? 1 : 0;
+        var idx = $(this).val();
+        $.get('/srv/service/cart/update-field/' + idx + '/HedPaket/' + value, function () {
+            $('#cartDetail').angularTemplate();
+        });
+    });
+
+    $('#updateBasket').click(function () {
+        var countArr = [];
+        $('.qty').each(function () {
+            countArr.push($(this).val());
+        });
+        Cart.updateAll(countArr, function (result) {
+            $('#cartDetail').angularTemplate();
+            Message.showDialog(result.statusText, 400);
+        });
+    });
+
+    ///////////////
+    for (var i = 8; i < 24; i++) {
+        var j = i < 10 ? "0" + i : i;
+        $("#datepickerHour").append('<option value="' + j + ':00">' + j + ':00</option><option value="' + j + ':30">' + j + ':30</option>');
+    }
+
+    $("#datepickerHour").val(data.DELIVERY_HOUR);
+    $("#datepickerHour").change(function () {
+        $.post('/srv/service/cart/set-delivery-hour/' + $(this).val(), {hour : $(this).val()}, function(response){
+            var result = {};
+            try{
+                result = JSON.parse(response);
+            } catch(err){}
+            if(result && result.status == 0){
+                if(result.statusText){
+                    Message.debug(result.statusText);
+                }
+                $("#datepickerHour").val(result.time);
+            }
+        });
+    });
+
+    $('#order-note-save-btn').unbind('click').click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/srv/service/cart/set-general-order-note/',
+            type: 'POST',
+            data: {
+                content: $('#order-note-input').val()
+            },
+            dataType: 'json',
+            success: function () {
+                Message.debug('Başarıyla Kaydedildi', 350, 2000);
+                $('#cartDetail').angularTemplate();
+            }
+        });
+    });
+
+    $('.subscribe-frequency-select').change(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: '/srv/service/cart/update-field/' + e.target.dataset.id + '/SubscribeFrequency/' + e.target.value,
+            type: 'GET',
+            success: function () {
+                $('#cartDetail').angularTemplate();
+            }
+        });
+    });
+}
+function addCampaign(group, id) {
+    $('#campaignList li input').removeAttr('checked');
+    $('#CAMPAIGN_' + id).attr('checked');
+    $.ajax({
+        url: '/srv/campaign-v2/campaign/select-campaign/' + group + '/' + id,
+        dataType: 'json',
+        success: function (msg) {
+            if (msg.status === 1) {
+                var url = window.location.href;
+                url = url.replace(/\?.*?$/ig, '');
+                $('#cartDetail').angularTemplate();
+            } else {
+                Message.showDialog(msg.statusText, 700);
+                $('#cp' + id).attr('checked', false).parent().removeClass('active');
+            }
+        }
+    });
+}
+
+function deleteCampaign(id) {
+    $.get('/srv/campaign-v2/campaign/deselect-campaign/' + id, function () {
+        $('#cartDetail').angularTemplate();
+    });
+}
+
+function qtyChange(sessId, newCount) {
+    var inc = parseFloat($('#SepetForm #Adet' + sessId).parent('.qtyBtns').attr('data-increment') || '1');
+    Cart.update(sessId, newCount, function (msg) {
+        if (msg.status > 0) {
+            $('#cartDetail').angularTemplate();
+            $('.cart-soft-count').text(msg.totalQuantity);
+            $('.cart-soft-price').text(msg.totalPrice);
+        }
+        else {
+            Message.showDialog(msg.statusText, 500, 50);
+            $('#SepetForm input[data-cart-id="' + sessId + '"]').val(newCount - inc);
+        }
+    });
+}
+
+function inputChange(sessId, newCount) {
+    Cart.update(sessId, newCount, function (msg) {
+        $('.cart-soft-count').text(msg.totalQuantity);
+        $('.cart-soft-price').text(msg.totalPrice);
+    });
+}
+
+function hopiRemove() {
+    $.get('/srv/service/hopi/remove-campaign', function () {
+        $('#cartDetail').angularTemplate();
+    });
+    return false;
+}
+
+function hopiChange() {
+    Message.instance['activePopup'].close();
+    $.get("/srv/service/content/get/1054/hopi-select-campaign", function (msg) {
+        $('#cartDetail').angularTemplate();
+        new Message({
+            title: 'Dialog',
+            html: msg || '',
+        }).show();
+    });
+}
+
+function zubizuSignout() {
+    $.get('/srv/service/zubizu/signout', function () {
+        $('#cartDetail').angularTemplate();
+    });
+    return false;
+}
+
