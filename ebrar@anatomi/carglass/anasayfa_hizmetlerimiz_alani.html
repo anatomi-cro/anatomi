@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+       .anatomi_our_services {
+        padding: 0 !important;
+      }
+      .anatomi-our-services-container {
+        position: relative;
+        width: 90vw;
+        height: 100%;
+        margin: 0 auto;
+      }
+
+      .anatomi-our-services-content {
+        width: 90vw;
+        height: 92svh;
+        background: url(https://cdn.carglass.com.tr/assets/hizmetlerimiz_mobil_v1.png)
+          no-repeat center center / cover;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        overflow-x: hidden;
+      }
+
+      .anatomi-our-services-body {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+      }
+
+      .anatomi-our-services-title {
+        text-align: center;
+        width: 90vw;
+        margin-bottom: 10px;
+      }
+
+      .anatomi-our-services-content-options {
+        position: relative;
+        width: 99.5%;
+        height: fit-content;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 30px;
+padding: 0px 20px 0px 25px;
+        margin-bottom: 30px;
+        overflow-x: scroll;
+      }
+
+      .anatomi-our-services-content-options::-webkit-scrollbar {
+        display: none;
+      }
+
+      .anatomi-our-services-content-option {
+      width: 35vw; 
+        height: 100%;
+        flex-shrink: 0;
+      }
+
+      .anatomi-our-services-content-option img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .anatomi-our-services-next {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        position: absolute;
+        bottom: 33%;
+        right: 2px;
+        cursor: pointer;
+        z-index: 9;
+      }
+
+      .anatomi-our-services-next img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .anatomi-our-services-prev {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        position: absolute;
+        bottom: 33%;
+        left: 10px;
+        cursor: pointer;
+        z-index: 9;
+      }
+
+      .anatomi-our-services-prev img {
+        width: 100%;
+        height: 100%;
+      }
+  </style>
+</head>
+<body>
+  <div class="anatomi-our-services-container">
+    <div class="anatomi-our-services-content">
+      <div class="anatomi-our-services-body">
+        <div class="anatomi-our-services-title">
+          <h1>Hizmetlerimiz</h1>
+        </div>
+
+        <div class="anatomi-our-services-prev">
+          <img src="https://cro-anatomi.s3.eu-north-1.amazonaws.com/hizmetlerimiz-prev.webp" alt="" />
+        </div>
+        <div class="anatomi-our-services-next">
+          <img src="https://cro-anatomi.s3.eu-north-1.amazonaws.com/hizmetlerimiz-next.webp" alt="" />
+        </div>
+
+        <div class="anatomi-our-services-content-options">
+          <div class="anatomi-our-services-content-option">
+            <a href="https://www.carglass.com.tr/yan-cam-degisimi">
+              <img src="https://r.resimlink.com/3o2mWQ.png" alt="" />
+            </a>
+          </div>
+
+          <div class="anatomi-our-services-content-option">
+            <a href="https://www.carglass.com.tr/arka-cam-degisimi">
+              <img src="https://r.resimlink.com/0mxCOS2.png" alt="" />
+            </a>
+          </div>
+
+          <div class="anatomi-our-services-content-option">
+            <a href="https://www.carglass.com.tr/on-cam-tamiri">
+              <img src="https://r.resimlink.com/9gEXyTKl.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+ function handleSwipe() {
+    const next = document.querySelector(".anatomi-our-services-next");
+
+    if (!next) return;
+
+    next.addEventListener("click", () => {
+      const options = document.querySelector(
+        ".anatomi-our-services-content-options"
+      );
+      if (!options) return;
+      options.scrollTo({
+        left: options.scrollLeft + (options.offsetWidth - 5),
+        behavior: "smooth",
+      });
+    });
+
+    const prev = document.querySelector(".anatomi-our-services-prev");
+
+    prev.addEventListener("click", () => {
+      const options = document.querySelector(
+        ".anatomi-our-services-content-options"
+      );
+      if (!options) return;
+      options.scrollTo({
+        left: options.scrollLeft - (options.offsetWidth - 5),
+        behavior: "smooth",
+      });
+    });
+  }
+
+  handleSwipe();
+  </script>
+</body>
+</html>

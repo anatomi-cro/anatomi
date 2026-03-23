@@ -1,0 +1,100 @@
+const cta_ifadesinin_kullanimi_html = () => {
+    const html = `
+      <section class="anatomi_cta_section">
+    <div class="anatomi_cta_container">
+      <div class="anatomi_cta_text">
+        <h2>Mümkün olan her durumda “önce tamir” politikamızı uygularız!</h2>
+        <p>Cam hasarınızı değerlendirmek için hemen randevu alın, size en uygun çözümü sunalım.</p>
+      </div>
+      <div class="anatomi_cta_button">
+        <a href="#">
+        <img src="https://cro-anatomi.s3.eu-north-1.amazonaws.com/carglass_randevu_icon.png"></img>
+            Randevu Al</a>
+      </div>
+    </div>
+  </section>
+    `;
+    const targetElement  = document.querySelector("#content > div.anatomi_content > div.anatomi_our_solution");
+    if (targetElement) {
+        targetElement.insertAdjacentHTML("afterend", html);
+    }
+};
+
+const cta_ifadesinin_kullanimi_css = () => {
+    const style = `
+      <style>    
+       .anatomi_cta_section {
+      background-color: #FFDD44; 
+      padding: 40px 20px;
+    }
+
+    .anatomi_cta_container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .anatomi_cta_text h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.8rem;
+    }
+
+    .anatomi_cta_text p {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .anatomi_cta_button a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 24px;
+      background-color: #111827;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .anatomi_cta_button img {
+        width: 30px;
+    }
+    @media (max-width: 1020px) {
+      .anatomi_cta_container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+    }
+      </style>
+    `;
+    const head = document.querySelector("head");
+    head.insertAdjacentHTML("beforeend", style);
+};
+
+const cta_ifadesinin_kullanimi_js = () => {
+    const oldVersion = document.querySelector("#content > div.anatomi_content > div.anatomi_our_fixing");
+    if (oldVersion) {
+        oldVersion.style.display = "none";
+    }
+};
+
+const cta_ifadesinin_kullanimi_init = () => {
+    cta_ifadesinin_kullanimi_html();
+    cta_ifadesinin_kullanimi_css();
+    cta_ifadesinin_kullanimi_js();
+};
+
+const cta_ifadesinin_kullanimi_condition = () => {
+    return true;
+};
+
+if (cta_ifadesinin_kullanimi_condition()) {
+    cta_ifadesinin_kullanimi_init();
+}

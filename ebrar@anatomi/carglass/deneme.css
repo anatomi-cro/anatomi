@@ -1,0 +1,2068 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  
+}
+
+p, span, h2, h3, a, li, button {
+    font-family: "Roboto", serif !important;
+}
+
+
+.anatomi_break-word {
+    word-break: break-word;
+    max-width: 65%;
+}
+
+.eWlnOb {
+    color: #404040 !important;
+    font-size: 28px !important;
+    text-transform: capitalize !important;
+}
+
+.iqPsnt {
+    transform: translate(-50px, -50%) !important;
+}
+
+.ldZdCm {
+    transform: translate(50px, -50%) !important;
+}
+
+.ddsmoothmenu ul {
+    margin-left: 0 !important;
+}
+
+.anatomi_our_solution_counter {
+    color: white !important;
+}
+
+
+h2 {
+    font-size: 28px !important;
+    font-weight: 800 !important;
+}
+
+.anatomi_form-container {
+    width: 450px;
+    margin-left: 100px;
+}
+
+.anatomi_form_tab_btn_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.anatomi_form_tab_btn {
+    padding: 15px 55px;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #80808066;
+    color: black;
+}
+
+
+    .anatomi_form_tab_btn.active {
+        background-color: white;
+        text-decoration: underline;
+        font-weight: bold;
+        border: none;
+    }
+
+.anatomi_form_phone_container {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: center;
+    gap: 5px;
+    margin-left: 10%;
+}
+
+.anatomi_form_phone_btn {
+    position: relative;
+    width: 30%;
+    margin-top: 10px;
+    background-color: #fedd44;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 20px 0px;
+    font-size: 18px;
+    color: black;
+}
+
+
+    .anatomi_form_phone_btn i {
+        margin-right: 10px;
+    }
+
+    .anatomi_form_phone_btn:hover {
+        background-color: #b09613;
+        color: #b09613;
+    }
+
+
+    .anatomi_form_phone_btn::after {
+        content: url('https://anatomi.s3.eu-north-1.amazonaws.com/icons8-copy-64.png');
+        position: absolute;
+        right: 44%;
+        top: 8%;
+        opacity: 0;
+        transition: opacity 0.3s;
+        transform: scale(0.5);
+    }
+
+
+    .anatomi_form_phone_btn:hover::after {
+        opacity: 1;
+    }
+
+    .anatomi_form_phone_btn.copied::after {
+        content: "Kopyalandı";
+        color: black;
+        opacity: 1;
+        right: 35%;
+        top: 30%;
+        transform: scale(0.9);
+    }
+
+
+.anatomi_randevu_form {
+    display: none;
+    visibility: visible;
+}
+
+
+#anatomi_randevu_form_content {
+    background: white;
+    height: fit-content;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-family: Roboto;
+}
+
+
+    #anatomi_randevu_form_content label {
+        font-size: 16px;
+        color: black;
+    }
+
+    #anatomi_randevu_form_content input {
+        background-color: #f1f1f1;
+        border: 1px solid #dedcdc;
+        border-radius: 6px;
+        box-shadow: none;
+        width: 95%;
+        height: 25px;
+        padding: 10px 5px;
+        margin-bottom: 15px;
+    }
+
+
+.anatomi_form_randevu_btn {
+    background-color: gray;
+    color: #1e1e1e;
+    width: 100%;
+    padding: 15px 0px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+
+#anatomi_nameSurname, #anatomi_phone {
+    font-size: 16px;
+    color: black;
+}
+
+
+#frmSiziArayalim {
+    background: white;
+    height: 500px;
+    padding: 30px;
+}
+
+.wp2 {
+    background-color: #f1f1f1;
+    border: 1px solid #dedcdc;
+    border-radius: 6px;
+    box-shadow: none;
+    width: 95%;
+    height: 25px;
+    padding: 10px 5px;
+    color: black;
+    font-size: 16px;
+}
+
+.anatomi_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.anatomi_modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 1000px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+.anatomi_modal-body {
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+
+    .anatomi_modal-body p {
+        text-align: justify;
+    }
+
+.kvkk {
+    font-size: 15px;
+    color: black;
+    margin-top: 20px;
+}
+
+    .kvkk input {
+        width: 20px;
+        height: 18px;
+    }
+
+
+.submit_btn {
+    background-color: gray;
+    color: white;
+    width: 100%;
+    padding: 15px 0px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.anatomi_modal-close, .anatomi_modal-close_second, .anatomi_modal-close_third {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+#anatomi_modal_checkbox, #anatomi_modal_checkbox_second, #anatomi_modal_checkbox_third {
+    box-shadow: none !important;
+    width: 30px;
+}
+
+
+.anatomi_modal_checkbox_wrapper label {
+    color: black;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.anatomi_modal-body_third {
+    overflow: hidden !important;
+}
+
+#header {
+    padding-top: 0;
+}
+
+.anatomi_header_info {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 999999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px 15px;
+    border-bottom: 1px solid #0000000f;
+}
+
+    .anatomi_header_info a {
+        color: black;
+    }
+
+        .anatomi_header_info a:visited {
+            color: black;
+        }
+
+    .anatomi_header_info i {
+        font-size: 20px;
+    }
+
+    .anatomi_header_info p {
+        padding: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+.anatomi_header_phone, .anatomi_header_gmail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carglass_header_mobile {
+    display: none;
+}
+
+.anatomi_hero-exp {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    width: 40%;
+    line-height: 40px;
+}
+
+.anatomi_header_info_left {
+    display: flex;
+    gap: 50px;
+}
+
+
+.anatomi_header_info_right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+
+#copyMessage {
+    position: fixed;
+    top: 35px;
+    left: 100px;
+    background-color: #000000cc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 9999;
+    display: none;
+}
+
+#copyMessage2 {
+    position: fixed;
+    top: 35px;
+    left: 250px;
+    background-color: #000000cc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 9999;
+    display: none;
+}
+
+
+.ddsmoothmenu ul {
+    margin-left: 0 !important;
+}
+
+
+.menu-wrapper {
+    border: none !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    font-weight: bold;
+}
+
+
+    .menu-wrapper li a {
+        font-weight: bold !important;
+    }
+
+
+#anatomi_navbar {
+    width: 100%;
+    padding: 20px 0;
+     box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+
+.anatomi_navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 20px !important;
+}
+
+
+
+.anatomi_ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+    .anatomi_ul li {
+        position: relative;
+        padding: 8px 20px;
+        border-right: 1px solid #e5e5e5;
+    }
+
+        .anatomi_ul li:last-child {
+            border-right: none;
+        }
+
+        .anatomi_ul li a {
+            text-decoration: none;
+            color: black;
+            transition: all .3s ease;
+            line-height: 1em;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+            .anatomi_ul li a.selected {
+                color: #d95b44 !important;
+            }
+
+
+
+
+    .anatomi_ul ul {
+        position: absolute;
+        color: white;
+        top: 100%;
+        left: 0;
+        background: #414141;
+        border-top: 2px solid #d95b44;
+        padding: 0;
+        list-style: none;
+        min-width: 200px;
+        display: none;
+        margin-top: 5px;
+    }
+
+#anatomi_navbar > div > div.anatomi_navbar_center > ul > li > ul > li > a {
+    color: white;
+    font-size: 12px;
+}
+
+#anatomi_navbar > div > div.anatomi_navbar_center > ul > li > ul > li > ul > li > a {
+    font-size: 12px;
+    color: white;
+}
+
+
+.anatomi_ul .anatomi_main_list:hover > ul,
+.anatomi_ul .anatomi_main_list ul:hover {
+    display: block;
+}
+
+
+.anatomi_ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.anatomi_ul i {
+    padding-left: 5px;
+}
+
+.anatomi_ul .anatomi_sub_list:hover > ul {
+    display: block;
+}
+
+.anatomi_navbar-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.anatomi_navbar_phone-number {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    padding-bottom: 0px !important;
+    white-space: nowrap !important;
+}
+
+.anatomi_randevu-btn {
+    background-color: #fedd44;
+    color: #1e1e1e;
+    padding: 5px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.anatomi_randevu-btn-map {
+    background-color: #fedd44;
+    color: #1e1e1e;
+    padding: 15px 60px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.anatomi_hamburger_icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.anatomi_sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #000000f5;
+    color: #fff;
+    transition: right 0.3s ease;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+
+.anatomi_closebutton {
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+
+#anatomi_responsive_navbar {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+
+    #anatomi_responsive_navbar li {
+        padding: 15px 20px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+
+
+.anatomi_dropdown-trigger {
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+
+    .anatomi_dropdown-trigger i {
+        position: absolute;
+        right: 15px;
+    }
+
+
+.anatomi_dropdown {
+    display: none;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+
+.anatomi_dropdown-trigger.active + .anatomi_dropdown {
+    display: block;
+}
+
+
+.anatomi_dropdown-item {
+    padding: 15px 0px;
+    cursor: pointer;
+}
+
+
+.anatomi_nested-dropdown-trigger {
+    padding: 15px 0px !important;
+    cursor: pointer;
+}
+
+
+    .anatomi_nested-dropdown-trigger.active + .anatomi_nested-dropdown {
+        display: block;
+    }
+
+
+.anatomi_header_info_desktop {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.anatomi_header_info_mobile {
+  display: none;
+}
+
+
+.anatomi_hero_section {
+ background-image: url(https://cdn.carglass.com.tr/assets/carglass_anasayfa_fold_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    color: black;
+    position: relative;
+    min-height: 400px;
+    width: 80%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 35px;
+    border-radius: 12px;;
+
+}
+
+.anatomi_hero_content {
+    max-width: 400px;
+    width: 350px;
+    background-color: white;
+    margin-left: 30px;
+    height: 45vh;
+    border-radius: 10px;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.anatomi_hero_content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.anatomi_buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+flex-direction: column;
+}
+
+.anatomi_btn , .anatomi_btn secondary {
+  padding: 12px 20px;
+  background-color: #fedd44;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.anatomi_divider {
+  border: none;
+border-top: 2px solid #8080802b;
+  margin: 10px 0;
+  width: 100%;
+}
+ .anatomi_advantages {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .anatomi_icons , .anatomi_explanations{
+   display: flex;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+.anatomi_icons img {
+      height: 30px;
+    width: 30px;
+}
+
+
+.anatomi_explanations p {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+
+.anatomi_content-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px;
+    border-top: 1px solid rgba(128, 128, 128, 0.712);
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.anatomi_anasayfa_hizmetler_section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 100px 0px;
+}
+
+.anasayfa_hizmetler_title {
+    padding-bottom: 30px;
+}
+
+.anatomi_anasayfa_hizmetler_content {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin-top: 30px;
+}
+
+    .anatomi_anasayfa_hizmetler_content ul {
+        padding-left: 15px;
+    }
+
+.anatomi_anasayfa_hizmetler_img_title {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.anatomi_anasayfa_hizmetler_list_item {
+    text-decoration: underline;
+}
+
+    .anatomi_anasayfa_hizmetler_list_item a {
+        color: black !important;
+    }
+
+.anatomi_anasayfa_hizmetler_arka_cam_img, .anatomi_anasayfa_hizmetler_yan_cam_img, .anatomi_anasayfa_hizmetler_on_cam_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.anatomi_content-section-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+
+    .anatomi_content-section-info img {
+        border: 1px solid red;
+        border-radius: 20px;
+        padding: 15px;
+        height: 70px;
+    }
+
+.content_3 img, .content_6 img {
+    width: 80px !important;
+}
+
+
+.anatomi_content-section-info p {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    line-height: 25px;
+}
+
+
+.anatomi_content_section_map {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #eeeeee;
+}
+
+.anatomi_content-section_map_info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.anatomi_content-section_map_phone {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.anatomi_content_section_map_info_phone_number {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 15px;
+}
+
+
+.anatomi_map_popup_phone_copy {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 999;
+    transition: opacity 0.5s ease;
+}
+
+
+.anatomi_content-section_map_phone p {
+    padding: 0px !important;
+    font-size: 18px;
+}
+
+.anatomi_content-section_map_phone span {
+    white-space: nowrap;
+    text-decoration: underline;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.anatomi_content_section_map_subeler {
+    width: 100%;
+}
+
+
+.anatomi_content_section_map_randevu p {
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+.anatomi_content-section_map_info_phone_icon {
+    width: 30%;
+}
+
+
+.anatomi_our_services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 50px;
+}
+
+.anatomi_nps_scores_container {
+    padding: 50px 0px;
+}
+
+.anatomi_nps_scores_desktop {
+    display: block;
+}
+
+.anatomi_nps_scores_mobile {
+    display: none;
+}
+
+.anatomi_our_services_content_options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.anatomi_our_services_content_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 100%;
+    min-width: 250px;
+}
+
+
+    .anatomi_our_services_content_info img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+
+    .anatomi_our_services_content_info p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+
+.anatomi_detail_button_container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+
+.anatomi-our-services-detail-button {
+    background: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.anatomi_our_services_content_contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #eeeeee;
+    margin-top: 10px;
+    padding: 50px;
+}
+
+
+.anatomi_our_services_content_contact_info {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 30px;
+}
+
+    .anatomi_our_services_content_contact_info p {
+        font-size: 24px;
+        width: 70%;
+        text-align: left;
+        line-height: 25px;
+        font-weight: bold;
+    }
+
+    .anatomi_our_services_content_contact_info span {
+        text-align: left;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+.anatomi_our_services_content_contact_image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+    .anatomi_our_services_content_contact_image img {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+    }
+
+
+.anatomi_our_services_content_contact_button_container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.anatomi_our_services_content_contact_us_btn {
+    padding: 15px 150px;
+    min-width: 120px;
+    background-color: #fedd44;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.anatomi_our_services_on_cam_tamiri {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 0px;
+    text-align: center;
+}
+
+
+.anatomi_our_services_on_cam_tamiri_content p {
+    font-size: 24px;
+    max-width: 60%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+
+.anatomi_our_services_on_cam_tamiri_info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+
+.anatomi_our_services_on_cam_tamiri_info_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    width: 90%;
+    text-align: center;
+}
+
+
+    .anatomi_our_services_on_cam_tamiri_info_image img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+        margin-bottom: 15px;
+    }
+
+
+    .anatomi_our_services_on_cam_tamiri_info_image p {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.4;
+        max-width: 100%;
+    }
+
+
+.anatomi_our_services_on_cam_tamiri_parts_of_car {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 50px 0px 50px;
+}
+
+
+    .anatomi_our_services_on_cam_tamiri_parts_of_car p {
+        text-align: center;
+        padding-top: 20px;
+        font-size: 18px;
+    }
+
+
+.anatomi_our_services_on_cam_ve_yan_cam,
+.anatomi_our_services_arka_cam_ve_kamera_kalibrasyonu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+}
+
+
+.anatomi_our_services_car_img img {
+    max-width: 100%;
+    width: 400px;
+}
+
+
+.anatomi_our_services_on_cam,
+.anatomi_our_services_yan_cam,
+.anatomi_our_services_arka_cam,
+.anatomi_our_services_kamera_kalibrasyonu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    height: 150px;
+}
+
+
+    .anatomi_our_services_on_cam img,
+    .anatomi_our_services_yan_cam img,
+    .anatomi_our_services_arka_cam img,
+    .anatomi_our_services_kamera_kalibrasyonu img {
+        border-bottom: 3px solid gray;
+        padding-bottom: 20px;
+        max-width: 150px;
+    }
+
+
+.anatomi_our_purpose {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    background-color: #eeeeee;
+}
+
+.anatomi_our_purpose_img img {
+    min-width: 300px;
+}
+
+.anatomi_our_purpose_content_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    width: 60%;
+}
+
+
+    .anatomi_our_purpose_content_info img {
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+
+    .anatomi_our_purpose_content_info p,
+    .anatomi_our_purpose_content_info span {
+        font-size: 18px;
+        text-align: left;
+        width: 50%;
+    }
+
+
+    .anatomi_our_purpose_content_info p {
+        font-weight: bold;
+    }
+
+.anatomi_our_purpose_img img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.anatomi_advertise_banner_desktop {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 50px;
+    background-image: url("https://cdn.carglass.com.tr/assets/carglass_cam_tamir_content_1.png");
+    background-size: contain;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.anatomi_advertise_banner_btn_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.anatomi_advertise_banner_desktop button {
+    padding: 15px 50px;
+    background-color: #fedd44;
+    color: black;
+    font-weight: bold;
+    font-size: 16px !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.anatomi_advertise_banner_mobile {
+    display: none;
+}
+
+.anatomi_our_solution {
+    background-image: url("https://cdn.carglass.com.tr/assets/carglass_solution_image.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+
+    .anatomi_our_solution::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+
+.anatomi_our_solution_content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+
+    .anatomi_our_solution_content h3 {
+        font-size: 40px;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+
+    .anatomi_our_solution_content span {
+        color: #f9301e;
+    }
+
+
+.anatomi_our_solution_content_contact-button {
+    padding: 15px 150px;
+    background-color: #fedd44;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.anatomi_our_reviews {
+    padding: 100px;
+    font-family: Roboto !important;
+}
+
+
+.anatomi_our_fixing {
+    display: flex;
+    padding: 50px;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+
+.anatomi_our_fixing_info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.anatomi_our_fixing_img {
+    display: flex;
+    align-items: center;
+}
+
+    .anatomi_our_fixing_img img {
+        max-height: 200px;
+        max-width: 550px;
+        border-radius: 10px;
+    }
+
+.anatomi_our_fixing_info p {
+    font-weight: bold;
+    font-size: 24px;
+    width: 40%;
+    line-height: 25px;
+}
+
+
+.anatomi_responsive_navbar {
+    list-style: square !important;
+}
+
+
+    .anatomi_responsive_navbar ul {
+        list-style: square !important;
+    }
+
+
+.anatomi_show_email {
+    color: #d95b44;
+    cursor: pointer;
+}
+
+
+.anatomi_footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    background-color: #626262;
+    color: white;
+    font-size: 20px;
+}
+
+.anatomi_footer-left {
+    width: 55%;
+}
+
+.anatomi_footer-description {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 60%;
+}
+.anatomi_footer-logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.anatomi_footer-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.anatomi_footer-links {
+    display: flex;
+    margin-right: 20px;
+}
+
+.anatomi_list_title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.anatomi_footer-links h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.anatomi_footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .anatomi_footer-links ul li {
+        margin-bottom: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        gap: 10px
+    }
+
+        .anatomi_footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+            .anatomi_footer-links ul li a:hover {
+                text-decoration: underline;
+            }
+
+
+#copyMessage_f {
+    position: fixed;
+    bottom: 33%;
+    right: 85px;
+    background-color: #000000cc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 9999;
+    display: none;
+}
+
+#copyMessage2_f {
+    position: fixed;
+    bottom: 28%;
+    right: 50px;
+    background-color: #000000cc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 9999;
+    display: none;
+}
+
+
+
+
+/*FOR RESPONSIVE*/
+
+
+@media (max-width: 1024px) {
+    .anatomi_content-section-info {
+        min-height: 200px;
+    }
+
+    .anatomi_advertise_banner_desktop {
+        width: 900px
+    }
+
+        .anatomi_advertise_banner_desktop button {
+            padding: 15px 70px;
+        }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+   
+    .anatomi_content-section_map_img iframe {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .anatomi_hero-section {
+        height: 105vh;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .anatomi_content-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .anatomi_content-section-info:nth-child(4), .anatomi_content-section-info:nth-child(5), .anatomi_content-section-info:nth-child(6) {
+        margin-top: 40px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .anatomi_hero-exp {
+        padding: 20px 0px;
+        width: 100%;
+        font-size: 16px;
+        line-height: 25px;
+        padding-right: 20px;
+    }
+    .anatomi_header_info {
+        padding: 10px 5px;
+    }
+
+
+    .anatomi_header_info_left {
+        gap: 40px;
+    }
+
+    .anatomi_header_info_right {
+        gap: 3px;
+        margin-right: 60px;
+        margin-top: 18px;
+    }
+
+    .anatomi_header_phone, .anatomi_header_gmail {
+        display: none;
+        gap: 5px;
+        background-color: #fedd44;
+        padding: 5px 15px;
+        border-radius: 5px;
+    }
+
+    .carglass_header_mobile {
+        display: flex;
+        gap: 5px;
+        background-color: #fedd44;
+        padding: 5px 15px;
+        border-radius: 5px;
+    }
+
+    .anatomi_header_info p {
+        font-size: 12px;
+    }
+
+
+    .anatomi_header_info i {
+        font-size: 16px;
+    }
+
+    #copyMessage {
+        left: 50px;
+    }
+
+    .anatomi_navbar-container {
+        justify-content: space-between;
+    }
+
+    .anatomi_ul {
+        display: none;
+    }
+
+    .anatomi_hamburger_icon {
+        display: block;
+    }
+
+    .anatomi_navbar-right {
+        display: none;
+    }
+
+    .anatomi_hero-section {
+        height: 80vh;
+        background-position: 60% center;
+    }
+
+    .anatomi_hero_content {
+    height: 35vh;
+  }
+    .anatomi_hero_section {
+   background-image: url(https://cdn.carglass.com.tr/assets/carglass_anasayfa_fold_banner.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: #fff;
+        width: 100vw;               
+        height: 70vh;               
+        display: flex;
+        margin-top: 0px;
+        border-radius: 0;
+  }
+  .anatomi_hero_content {
+    max-width: none;
+    width: 90%;
+    margin: auto;
+    border: 1px solid #80808042;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  }
+  .anatomi_hero_content p {
+    width: 85%;
+    text-align: center;
+  }
+  .anatomi_header_info_desktop {
+    display: none;
+  }
+  .anatomi_divider {
+    margin: 10px 0px;
+  }
+
+  .anatomi_header_info_mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fedd44;
+    color: black;
+    padding: 5px;
+    gap: 12px;
+  }
+
+  .anatomi_advantages {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .anatomi_icons , .anatomi_explanations{
+   display: flex;
+   gap: 0px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .anatomi_btn, .anatomi_btn secondary {
+    padding: 12px 50px;
+  }
+
+  .anatomi_header_box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .anatomi_header_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .anatomi_header_row i,
+  .anatomi_header_row p {
+    color: black;
+    margin: 0;
+  }
+    .anatomi_form-container {
+        width: 90%;
+        top: 50%;
+        left: 0;
+        margin: 0 auto;
+    }
+
+    .anatomi_form_tab_btn {
+        width: 45%;
+        padding: 10px 0px;
+        font-size: 14px;
+    }
+    
+    #frmSiziArayalim {
+        min-height: 550px;
+    }
+
+    .anatomi_form_phone_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+
+    .anatomi_form_phone_btn {
+        font-size: 14px;
+        width: 43%;
+        padding: 5px 0px;
+    }
+
+        .anatomi_form_phone_btn i {
+            margin-right: 10px;
+        }
+
+    .anatomi_content-section-info p {
+        font-size: 14px;
+    }
+
+
+    .anatomi_modal-content {
+        width: 85%;
+        padding: 15px;
+    }
+
+    .anatomi_form_phone_btn:hover {
+        background-color: #b09613;
+        color: black;
+    }
+
+    .anatomi_form_phone_btn::after {
+        content: none;
+        right: 40%;
+        top: -20%;
+    }
+
+    .anatomi_form_phone_btn.copied::after {
+        right: 40%;
+        top: 20%;
+    }
+
+
+    .anatomi_modal-body_third {
+        overflow-y: scroll !important;
+    }
+
+
+    .anatomi_anasayfa_hizmetler_content {
+        width: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+
+        .anatomi_anasayfa_hizmetler_content div {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    .anatomi_content-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .anatomi_content-section-info:nth-child(4), .anatomi_content-section-info:nth-child(5) {
+        margin-top: 0px;
+        transform: translateX(0%);
+    }
+
+
+    .anatomi_content_section_map {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .anatomi_content_section_map_randevu p {
+        font-size: 14px;
+    }
+
+    .anatomi_content-section_map_img {
+        display: flex;
+        justify-content: center;
+    }
+
+
+        .anatomi_content-section_map_img iframe {
+            width: 100%;
+            height: 300px;
+        }
+
+    .anatomi_content-section_map_phone span, .anatomi_content-section_map_phone p {
+        font-size: 14px;
+    }
+
+    .anatomi_content_section_map_subeler {
+        width: 80%;
+    }
+
+    .anatomi_our_services_content_contact_info {
+        padding-left: 0;
+        padding-top: 20px;
+        align-items: center;
+        text-align: center;
+        width: 90%;
+    }
+
+    .anatomi_nps_scores_desktop {
+        display: none;
+    }
+
+    .anatomi_nps_scores_mobile {
+        display: block;
+    }
+
+    .anatomi_nps_scores_container {
+        padding: 0px 0px;
+    }
+
+    .anatomi_our_services_content_info p {
+        text-align: justify;
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+
+    .anatomi_our_services_content_contact_image {
+        order: -1;
+    }
+
+        .anatomi_our_services_content_contact_image img {
+            max-width: 300px;
+        }
+
+    .anatomi_our_services_content_contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .anatomi_our_services_content_contact_info p {
+        width: 100%;
+        font-size: 14px;
+        text-align: justify;
+    }
+
+
+    .anatomi_our_services_content_contact_us_btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 5px 70px;
+    }
+
+    .anatomi_content_section_map_randevu-btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .anatomi_our_services_on_cam_tamiri_info {
+        flex-direction: column;
+        padding-left: 0;
+        padding-top: 20px;
+        align-items: center;
+        max-width: 350px;
+    }
+
+    .anatomi_our_services_on_cam_tamiri_content p {
+        font-size: 14px;
+        width: 90%;
+    }
+
+    .anatomi_our_services_on_cam_tamiri_info_image {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+        .anatomi_our_services_on_cam_tamiri_info_image img {
+            max-width: 100px;
+            padding-right: 20px;
+        }
+
+
+    .anatomi_our_services_on_cam_tamiri_info p {
+        font-size: 14px;
+        width: 50%;
+        font-weight: normal;
+        text-align: left;
+    }
+
+    .anatomi_advertise_banner_mobile {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 20px;
+        gap: 30px;
+        background-image: url("https://cdn.carglass.com.tr/assets/carglassContentBanner.png");
+        width: 320px;
+        height: 215px;
+        background-size: auto 210px;
+        background-position: top center;
+        background-repeat: no-repeat;
+        margin: 20px auto;
+    }
+
+    .anatomi_advertise_banner_desktop {
+        display: none;
+    }
+
+    .anatomi_advertise_banner_mobile img {
+        width: 365px;
+    }
+
+    .anatomi_advertise_banner_btn_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .anatomi_advertise_banner_mobile button {
+        padding: 10px 30px;
+        background-color: #fedd44;
+        color: black;
+        font-weight: bold;
+        font-size: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+
+    .anatomi_our_services_on_cam_tamiri_parts_of_car {
+        gap: 0px;
+        padding: 0px 0px 0px 0px;
+        justify-content: center;
+        max-width: 300px;
+    }
+
+        .anatomi_our_services_on_cam_tamiri_parts_of_car p {
+            font-size: 14px;
+        }
+
+    .anatomi_our_fixing {
+        flex-direction: column;
+        padding: 20px 0px 0px;
+        align-items: center;
+    }
+
+    .anatomi_our_fixing_info {
+        align-items: center;
+        padding: 20px 0px;
+        text-align: center;
+        width: 90%;
+    }
+
+        .anatomi_our_fixing_info p {
+            width: 70%;
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+    .anatomi_our_fixing_img img {
+        max-width: 100%;
+    }
+
+    .anatomi_our_services_content_options {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+    }
+
+
+    .anatomi_our_services_content_info {
+        width: 90%;
+    }
+
+    .anatomi_our_services_content_contact_info span {
+        font-size: 14px;
+    }
+
+    .anatomi_our_services_content_info.active {
+        display: flex;
+    }
+
+
+    .anatomi_our_services_content_info img {
+        max-width: 300px;
+    }
+
+    .anatomi-our-services-detail-button {
+        display: none;
+    }
+
+
+
+
+    .anatomi_our_services_on_cam_ve_yan_cam,
+    .anatomi_our_services_arka_cam_ve_kamera_kalibrasyonu {
+        max-width: 20%;
+    }
+
+    .anatomi_our_services_arka_cam_ve_kamera_kalibrasyonu {
+        gap: 20px;
+    }
+
+    .anatomi_our_services_car_img img {
+        max-width: 150px;
+    }
+
+    .anatomi_our_purpose {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .anatomi_our_purpose_content_info {
+        width: 100%;
+        align-items: center;
+    }
+
+        .anatomi_our_purpose_content_info p {
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+        }
+
+    .anatomi_our_purpose_img {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .anatomi_our_purpose_content_info span {
+        margin-top: 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .anatomi_our_solution_content h3 {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .anatomi_our_solution_content span {
+        font-size: 24px;
+    }
+
+    .anatomi_our_solution_content_contact-button {
+        padding: 5px 100px;
+        font-size: 15px;
+    }
+
+    .anatomi_footer {
+        flex-direction: column;
+    }
+
+    .anatomi_footer-left {
+        width: 100%;
+    }
+
+    .anatomi_footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-height: 750px) {
+    .anatomi_hero-section {
+        height: 130vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

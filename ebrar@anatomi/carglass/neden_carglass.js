@@ -1,0 +1,133 @@
+const deneme_html = () => {
+    const html = `
+  <section class="anatomi-feature-section" aria-labelledby="features-heading">
+    <div class="anatomi-feature-header">
+      <h2 id="features-heading">Neden Carglass?</h2>
+      <p>Oto cam hizmetlerinde fark yaratan avantajlarımız</p>
+    </div>
+
+    <div class="anatomi-cards">
+      <article class="anatomi-card" aria-labelledby="card1-title">
+        <img src="https://cro-anatomi.s3.eu-north-1.amazonaws.com/neden_carglass_icon_1.png" alt="Örnek görsel 1">
+        <h2 class="anatomi-title">Ekonomik</h2>
+        <p class="anatomi-desc">Önce tamir politikamızla maliyetlerinizi düşürün. Uygun fiyatlarla kaliteli hizmet. </p>
+      </article>
+
+      <article class="anatomi-card" aria-labelledby="card2-title">
+        <img src="https://cro-anatomi.s3.eu-north-1.amazonaws.com/neden_carglass_icon_2.png" alt="Örnek görsel 2">
+        <h2 class="anatomi-title">Hızlı Çözüm</h2>
+        <p class="anatomi-desc">Ön cam tamiri sadece 30 dakika. Mobil servis ile istediğiniz yerde hizmet.</p>
+      </article>
+
+      <article class="anatomi-card" aria-labelledby="card3-title">
+        <img src="https://cro-anatomi.s3.eu-north-1.amazonaws.com/neden_carglass_icon_3.png" alt="Örnek görsel 3">
+        <h2 class="anatomi-title">Orijinal Kalite</h2>
+        <p class="anatomi-desc">Orijinal yedek parça ve garanti güvencesi.</p>
+      </article>
+    </div>
+  </section>
+
+    `;
+    const review = document.querySelector("#content > div.anatomi_content > div.anatomi_our_reviews")
+    review.insertAdjacentHTML("afterend", html);
+};
+
+const deneme_css = () => {
+    const style = `
+      <style>    
+    .anatomi-feature-section{
+      margin: 0 auto;
+      padding: 80px;
+    }
+
+    .anatomi-feature-header{
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .anatomi-feature-header h2{
+      font-size: 1.6rem !important;
+      margin: 0 0 8px 0;
+    }
+
+    .anatomi-feature-header p{
+      margin: 0;
+      font-size: 0.98rem !important;
+    }
+
+    .anatomi-cards {
+      display: flex;
+      gap: 50px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .anatomi-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      min-width: 240px;
+      max-width: 350px; 
+      height: 200px;      
+      flex: 1 1 300px;       
+      transition: transform .18s ease, box-shadow .18s ease;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .anatomi-card img{
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .anatomi-card .anatomi-title{
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      font-size: 1.05rem !important;
+    }
+
+    .anatomi-card .anatomi-desc{
+      color: #3d3d3d;
+      font-size: 0.9rem !important;
+    }
+
+
+    @media (max-width: 920px){
+      .anatomi-feature-header h2{ font-size: 1.4rem; }
+    }
+
+    @media (max-width: 620px){
+      .anatomi-cards{ gap: 12px; }
+      .anatomi-card{ flex: 1 1 100%; } 
+    }
+      </style>
+    `;
+    const head = document.querySelector("head");
+    head.insertAdjacentHTML("beforeend", style);
+};
+
+const deneme_js = () => {
+};
+
+const deneme_init = () => {
+    deneme_html();
+    deneme_css();
+    deneme_js();
+};
+
+const deneme_condition = () => {
+    return true;
+};
+
+if (deneme_condition()) {
+    deneme_init();
+}

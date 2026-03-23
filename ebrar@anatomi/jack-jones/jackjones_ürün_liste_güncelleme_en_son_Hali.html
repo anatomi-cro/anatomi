@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+  "use strict";
+
+var urun_detay_kampanya_yonlendirme_html = function urun_detay_kampanya_yonlendirme_html() {
+  var html = "\n      <a href=\"https://jackjones.com.tr/black-friday\" class=\"anatomi_kampanya_yonlendirme_container\">\n      <div class=\"anatomi_kampanya_yonlendirme_content\">\n        <div class=\"anatomi_kampanya_yonlendirme_left_col\">\n          <h3>KASIM \xD6ZEL Se\xE7ili \xDCr\xFCnlerde Net %30 \u0130ndirim</h3>\n          <h4>Kampanyadaki daha fazla \xFCr\xFCn\xFC ke\u015Ffet</h4>\n        </div>\n        <div class=\"anatomi_kampanya_yonlendirme_right_col\">\n          <img src=\"https://anatomi.s3.eu-north-1.amazonaws.com/jj_kampanya_yonlendirme_next.png\" alt=\"\">\n        </div>\n      </div>\n    </a>\n  ";
+  var element = !document.querySelector(".anatomi_kampanya_yonlendirme_container");
+  var container = document.querySelector(".size-chart");
+  if (container && element) {
+    container.insertAdjacentHTML("afterend", html);
+  }
+};
+var urun_detay_kampanya_yonlendirme_css = function urun_detay_kampanya_yonlendirme_css() {
+  var style = "\n     <style>\n.anatomi_kampanya_yonlendirme_container {\n        display: block;\n        width: 100%;\n        height: fit-content;\n        margin: 0px 0px 10px 0 !important;\n        text-decoration: none;\n      }\n\n      .size-chart {\n      margin-bottom: 15px !important;}\n\n      .anatomi_kampanya_yonlendirme_content {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        background-color: rgba(221, 221, 221, 0.5);;\n        padding: 10px 15px;\n        border-radius: 4px;\n      }\n\n\n      .anatomi_kampanya_yonlendirme_left_col {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: flex-start;\n        gap: 3px;\n      }\n\n      .anatomi_kampanya_yonlendirme_left_col h3 {\n        font-size: 13px;\n        color: #0032D2;\n        font-weight: 700;\n        margin: 0;\n        padding: 0;\n      }\n\n      .anatomi_kampanya_yonlendirme_left_col h4 {\n        font-size: 13px;\n        color: #000;\n        font-weight: 400;\n        margin: 0;\n        padding: 0;\n      }\n\n      .anatomi_kampanya_yonlendirme_right_col {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n      }\n    </style>\n    ";
+  var head = document.querySelector("head");
+  head.insertAdjacentHTML("beforeend", style);
+};
+var urun_detay_kampanya_yonlendirme_js = function urun_detay_kampanya_yonlendirme_js() {
+  var urunler = [
+   { name: "5'li Düz Renk Logolu Boxer" },
+  { name: "Büyük Beden Bisiklet Yaka Sweatshirt - Bradley" },
+  { name: "Büyük Beden Suya Dayanıklı Parka - Blakeen" },
+  { name: "Çocuk Logo Baskılı Kapüşonlu Sweatshirt - Kam" },
+  { name: "Çocuk Suya Dayanıklı Kapüşonlu Ceket - Vesterbro" },
+  { name: "Erkek Biker Deri Görünümlü Ceket - Rocky" },
+  { name: "Erkek Bisiklet Yaka Baskılı Sweatshirt - Ray" },
+  { name: "Erkek Bisiklet Yaka Kısa Kollu Tişört - Deco" },
+  { name: "Erkek Bisiklet Yaka Logo Baskılı Sweatshirt - Box" },
+  { name: "Erkek Denim Kapüşonlu Ceket - Jean" },
+  { name: "Erkek Dik Yaka Puffer Yelek - Vesterbro" },
+  { name: "Erkek Fermuar Kapamalı Polar Sweatshirt - Badge" },
+  { name: "Erkek Göğüs Baskılı Kapüşonlu Sweatshirt - Aero" },
+  { name: "Erkek Göğüs Baskılı Uzun Kollu Sweatshirt - Grid" },
+  { name: "Erkek Göğüs Cepli Ceket - Ccdiego" },
+  { name: "Erkek Göğüs Logo Baskılı Bisiklet Yaka Sweatshirt - Basic" },
+  { name: "Erkek Göğüs Logo Baskılı Kapüşonlu Sweatshirt - Hakkai" },
+  { name: "Erkek Göğüs Logo Baskılı Kapüşonlu Sweatshirt - South" },
+  { name: "Erkek Harf İşlemeli Bomber Ceket - Varsity" },
+  { name: "Erkek Kapüşonlu Büzgü İpli Sweatshirt - Altitude" },
+  { name: "Erkek Kapüşonlu Fermuarlı Puffer Mont - Otto" },
+  { name: "Erkek Kapüşonlu Fermuarlı Puffer Mont - Otto" },
+  { name: "Erkek Kapüşonlu İpli Sweatshirt - Blutom" },
+  { name: "Erkek Logo Baskılı Kapüşonlu Sweatshirt - Lakewood" },
+  { name: "Erkek Logo Baskılı Kapüşonlu Sweatshirt - Round" },
+  { name: "Erkek Logo Baskılı Kapüşonlu Sweatshirt - Walter" },
+  { name: "Erkek Logo Baskılı Sweat Pantolon - Gordon" },
+  { name: "Erkek Logolu 5'li Düz Renk Boxer Paketi - Black" },
+  { name: "Erkek Logolu Kapüşonlu Sweatshirt - Dust" },
+  { name: "Erkek Rüzgara Dayanıklı Denim Ceket - Brent 453" },
+  { name: "Erkek Rüzgara Dayanıklı Düğme Kapamalı Ceket - Ross" },
+  { name: "Erkek Rüzgara Dayanıklı Kapüşonlu Puffer Mont - Surface" },
+  { name: "Erkek Suya Dayanıklı Yağmurluk - Urban" },
+  { name: "Erkek Uzun Trençkot - Pilo" },
+  { name: "Erkek Yılbaşı Temalı Baskılı Sweatshirt - Xmas" },
+  { name: "Kadın Beyzbol Yakalı Bomber Ceket - Leila" },
+  { name: "Kadın Desenli Bisiklet Yaka Örme Kazak - Simone" },
+  { name: "Kadın Fonksiyonel Cepli Kargo Pantolon - Maddy" },
+  { name: "Kadın Kapüşonlu Puffer Mont - Lolly" },
+  { name: "Kadın Yüksek Yaka Kapitone Ceket - Stella" },
+  { name: "Kadın Yüksek Yaka Yün Ceket - Astrid" }];
+
+  var urun_name = document.querySelector(".uk-h3").textContent.trim().toLowerCase();
+  var urun_check = false;
+  urunler.forEach(function (urun) {
+    if (urun_name.includes(urun.name.trim().toLowerCase())) {
+      urun_check = true;
+    }
+  });
+  return urun_check;
+};
+var urun_detay_kampanya_yonlendirme_init = function urun_detay_kampanya_yonlendirme_init() {
+  urun_detay_kampanya_yonlendirme_html();
+  urun_detay_kampanya_yonlendirme_css();
+  urun_detay_kampanya_yonlendirme_js();
+};
+var urun_detay_kampanya_yonlendirme_conditions = function urun_detay_kampanya_yonlendirme_conditions() {
+  var device = window.matchMedia("(max-width: 768px)").matches;
+  var element = !document.querySelector(".anatomi_kampanya_yonlendirme_container");
+  var detail = document.querySelector(".product-detail");
+  return urun_detay_kampanya_yonlendirme_js() && device && element && detail;
+};
+if (urun_detay_kampanya_yonlendirme_conditions()) {
+  urun_detay_kampanya_yonlendirme_init();
+}
+</script>
+</html>

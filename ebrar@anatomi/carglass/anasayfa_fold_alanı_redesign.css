@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  
+}
+p, span , h2,h3, a ,li, button{
+font-family: "Roboto", serif !important;
+}
+
+#anatomi_navbar{
+      box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+}
+.anatomi_navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 20px !important;
+}
+
+.anatomi_navbar-logo {
+
+  width: 200px;
+}
+.anatomi_ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.anatomi_ul li {
+    position: relative;
+    padding: 3px 20px;
+    border-right: 1px solid #e5e5e5;
+}
+.anatomi_ul li:last-child {
+    border-right: none;
+}
+.anatomi_ul li a {
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease;
+    line-height: 1em;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.anatomi_ul li a.selected {
+    color: #d95b44 !important;
+}
+
+
+.anatomi_ul ul {
+    position: absolute;
+    color: white;
+    top: 100%;
+    left: 0;
+    background: #414141;
+    border-top: 2px solid #d95b44;
+    padding: 0;
+    list-style: none;
+    min-width: 200px;
+    display: none; 
+    margin-top: 5px;
+}
+#anatomi_navbar > div > div.anatomi_navbar_center > ul > li> ul > li > a{
+  color: white;
+  font-size: 12px;
+}
+#anatomi_navbar > div > div.anatomi_navbar_center > ul > li> ul > li> ul > li > a{
+  font-size: 12px;
+  color: white;
+}
+
+.anatomi_ul .anatomi_main_list:hover > ul,
+.anatomi_ul .anatomi_main_list ul:hover {
+    display: block; 
+}
+
+.anatomi_ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+.anatomi_ul i {
+    padding-left: 5px;
+}
+.anatomi_ul .anatomi_sub_list:hover > ul {
+    display: block; 
+}
+.anatomi_navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.anatomi_navbar_phone-number {  
+font-size: 18px !important;
+font-weight: bold !important;
+padding-bottom: 0px !important;
+white-space: nowrap !important;
+}
+.anatomi_randevu-btn {
+  background-color: #fedd44;
+  color: #1e1e1e;
+  padding: 15px 20px;
+  font-size: 15px;
+  font-weight: normal;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+  
+.anatomi_navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.anatomi_navbar-logo {
+
+  width: 200px;
+}
+.anatomi_ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.anatomi_ul li {
+    position: relative;
+    padding: 3px 20px;
+    border-right: 1px solid #e5e5e5;
+}
+.anatomi_ul li:last-child {
+    border-right: none;
+}
+.anatomi_ul li a {
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease;
+    line-height: 1em;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.anatomi_ul li a.selected {
+    color: #d95b44 !important;
+}
+
+
+.anatomi_ul ul {
+    position: absolute;
+    color: white;
+    top: 100%;
+    left: 0;
+    background: #414141;
+    border-top: 2px solid #d95b44;
+    padding: 0;
+    list-style: none;
+    min-width: 200px;
+    display: none; 
+    margin-top: 5px;
+}
+#anatomi_navbar > div > div.anatomi_navbar_center > ul > li> ul > li > a{
+  color: white;
+  font-size: 12px;
+}
+#anatomi_navbar > div > div.anatomi_navbar_center > ul > li> ul > li> ul > li > a{
+  font-size: 12px;
+  color: white;
+}
+
+.anatomi_ul .anatomi_main_list:hover > ul,
+.anatomi_ul .anatomi_main_list ul:hover {
+    display: block; 
+}
+
+.anatomi_ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+.anatomi_ul i {
+    padding-left: 5px;
+}
+.anatomi_ul .anatomi_sub_list:hover > ul {
+    display: block; 
+}
+.anatomi_navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.anatomi_navbar_phone-number {  
+font-size: 18px !important;
+font-weight: bold !important;
+padding-bottom: 0px !important;
+white-space: nowrap !important;
+}
+.anatomi_randevu-btn {
+  background-color: #fedd44;
+  color: #1e1e1e;
+  padding: 15px 20px;
+  font-size: 15px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+  
+.anatomi_randevu-btn-map{
+  background-color: #fedd44 ;
+  color: #1e1e1e;
+  padding: 15px 60px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+.anatomi_hamburger_icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: none; 
+}
+
+.anatomi_sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; 
+  width: 250px;
+  height: 100%;
+  background-color: #000000f5;
+  color: #fff;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.anatomi_closebutton  {
+  font-size: 24px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+#anatomi_responsive_navbar {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+#anatomi_responsive_navbar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.anatomi_dropdown-trigger {
+    cursor: pointer; 
+    padding: 10px 15px; 
+}
+
+.anatomi_dropdown-trigger i{
+    position: absolute;
+    right: 15px;
+}
+
+.anatomi_dropdown {
+    display: none;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.anatomi_dropdown-trigger.active + .anatomi_dropdown {
+    display: block;
+}
+
+.anatomi_dropdown-item {
+    padding: 15px 0px; 
+    cursor: pointer; 
+}
+
+.anatomi_nested-dropdown-trigger {
+    padding:15px 0px !important; 
+    cursor: pointer; 
+}
+
+.anatomi_nested-dropdown-trigger.active + .anatomi_nested-dropdown {
+    display: block;
+}
+
+.anatomi_header_info_left{
+    display: flex;
+    flex-direction: row !important;
+    gap: 15px;
+    align-items: center;
+    height: 20px;
+    margin-left: 30px;
+    font-size: 14px;
+
+}
+.anatomi_randevu-btn-map{
+  background-color: #fedd44 ;
+  color: #1e1e1e;
+  padding: 15px 60px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+.anatomi_hamburger_icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: none; 
+}
+
+.anatomi_sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; 
+  width: 250px;
+  height: 100%;
+  background-color: #000000f5;
+  color: #fff;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.anatomi_closebutton  {
+  font-size: 24px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+#anatomi_responsive_navbar {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+#anatomi_responsive_navbar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.anatomi_dropdown-trigger {
+    cursor: pointer; 
+    padding: 10px 15px; 
+}
+
+.anatomi_dropdown-trigger i{
+    position: absolute;
+    right: 15px;
+}
+
+.anatomi_dropdown {
+    display: none;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.anatomi_dropdown-trigger.active + .anatomi_dropdown {
+    display: block;
+}
+
+.anatomi_dropdown-item {
+    padding: 15px 0px; 
+    cursor: pointer; 
+}
+
+.anatomi_nested-dropdown-trigger {
+    padding:15px 0px !important; 
+    cursor: pointer; 
+}
+
+.anatomi_nested-dropdown-trigger.active + .anatomi_nested-dropdown {
+    display: block;
+}
+
+.anatomi_header_info_left{
+    display: flex;
+    flex-direction: row !important;
+    gap: 15px;
+    align-items: center;
+
+}
+
+.anatomi_hero_section {
+ background-image: url(https://cdn.carglass.com.tr/assets/carglass_anasayfa_fold_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    color: black;
+    position: relative;
+    min-height: 400px;
+    width: 80%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 35px;
+    border-radius: 12px;;
+
+}
+
+.anatomi_hero_content {
+    max-width: 400px;
+    width: 350px;
+    background-color: white;
+    margin-left: 30px;
+    height: 45vh;
+    border-radius: 10px;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.anatomi_hero_content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.anatomi_buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+flex-direction: column;
+}
+
+.anatomi_btn , .anatomi_btn secondary {
+  padding: 12px 20px;
+  background-color: #fedd44;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.anatomi_divider {
+  border: none;
+border-top: 2px solid #8080802b;
+  margin: 10px 0;
+  width: 100%;
+}
+ .anatomi_advantages {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .anatomi_icons , .anatomi_explanations{
+   display: flex;
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+.anatomi_icons img {
+      height: 30px;
+    width: 30px;
+}
+
+
+.anatomi_explanations p {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.anatomi_header_gmail , .anatomi_header_phone{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+ #copyMessage {
+  position: fixed;
+   top: 35px;
+   left: 100px;
+   background-color: #000000cc;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 12px;
+   font-weight: bold;
+   z-index: 9999;
+    display: none;
+ }
+   #copyMessage2 {
+  position: fixed;
+   top: 35px;
+   left: 250px;
+   background-color: #000000cc;
+   color: white;
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 12px;
+   font-weight: bold;
+   z-index: 9999;
+    display: none;
+ }
+
+ @media (max-width: 768px) {
+.anatomi_header_info {
+padding: 10px 5px;
+}
+
+.anatomi_header_info_left {
+gap: 5px;
+}
+.anatomi_header_info_right {
+gap: 3px;
+}
+ .anatomi_header_phone , .anatomi_header_gmail{
+    gap: 3px;
+ }
+.anatomi_header_info p {
+font-size: 12px;
+}
+
+.anatomi_header_info i {
+font-size: 16px;
+}
+#copyMessage {
+   left: 50px;
+}
+.anatomi_navbar-container {
+  justify-content: space-between;
+}
+.anatomi_ul {
+  display: none;
+}
+  .anatomi_hamburger_icon {
+    display: block;
+  }
+  .anatomi_navbar-right {
+    display: none;
+  }
+
+}
+
+.anatomi_header_info_desktop {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.anatomi_header_info_mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .anatomi_hero_content {
+    height: 35vh;
+  }
+    .anatomi_hero_section {
+   background-image: url(https://cdn.carglass.com.tr/assets/carglass_anasayfa_fold_banner.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-color: #fff;
+        width: 100vw;               
+        height: 70vh;               
+        display: flex;
+        margin-top: 0px;
+        border-radius: 0;
+  }
+  .anatomi_hero_content {
+    max-width: none;
+    width: 90%;
+    margin: auto;
+    border: 1px solid #80808042;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  }
+  .anatomi_hero_content p {
+    width: 85%;
+    text-align: center;
+  }
+  .anatomi_header_info_desktop {
+    display: none;
+  }
+  .anatomi_divider {
+    margin: 10px 0px;
+  }
+
+  .anatomi_header_info_mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fedd44;
+    color: black;
+    padding: 5px;
+    gap: 12px;
+  }
+
+  .anatomi_advantages {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .anatomi_icons , .anatomi_explanations{
+   display: flex;
+   gap: 0px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .anatomi_btn, .anatomi_btn secondary {
+    padding: 12px 50px;
+  }
+
+  .anatomi_header_box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .anatomi_header_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .anatomi_header_row i,
+  .anatomi_header_row p {
+    color: black;
+    margin: 0;
+  }
+ 
+}
+
+
+
+
+
+
+
+
